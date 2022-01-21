@@ -1,6 +1,8 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -34,19 +36,22 @@ function generatePassword() {
 // password is contained at least one character from that type string.
 function passwordCriteria() {
   let uppercase = "ABCDEFGHIJKLMNOPRSTUVWXYZ";
-  let lowercase ="abcdefghijklmnopqrstuvwxyz";
+  let lowercase = "abcdefghijklmnopqrstuvwxyz";
   let number = "0123456789";
   let specialChar = "!#$%&()*+,-./:;<=>?@[\]^_`{|}~";
+
   // password stores all the possible characters
-  let password = "";
+  let password_0 = "";
   // password_1 stores one character from each chosen string
   let password_1 = "";
   // count is to make sure user chooses at least one criteria
   let count = 0; 
 
+  confirm("Please select at least one criteria.\nIf not, the password will only contain lowercase letter");
+
   let uppercase_Confirm = confirm("Do you want UpperCase Letters in your password?");
   if(uppercase_Confirm == true) {
-    password += uppercase;
+    password_0 += uppercase;
     //  Using Math.random() to randomly pick one character
     password_1 += uppercase[Math.floor(Math.random()*uppercase.length)];  
     count++;
@@ -54,31 +59,34 @@ function passwordCriteria() {
 
   let lowercase_Confirm = confirm("Do you want LowerCase Letters in your password?");
   if(lowercase_Confirm == true) {
-    password += lowercase;
+    password_0 += lowercase;
     password_1 += lowercase[Math.floor(Math.random()*lowercase.length)];
     count++;
   }
 
   let number_Confirm = confirm("Do you want Numbers in your password?");
   if(number_Confirm == true) {
-    password += number;
+    password_0 += number;
     password_1 += number[Math.floor(Math.random()*number.length)];
     count++;
   }
 
   let specialChar_Confirm = confirm("Do you want Special Characters in your password?");
   if(specialChar_Confirm == true) {
-    password += specialChar;
+    password_0 += specialChar;
     password_1 += specialChar[Math.floor(Math.random()*specialChar.length)];
     count++
   }
-  
-  // If user doesn't choose any criteria, the alert message will pop out.
+
+  console.log(password_0);
+  // If user doesn't choose any criteria, the password will only contain lowercase letters.
   if(count > 0) {
-    return [password, password_1];
+    return [password_0, password_1];
   } else {
-    alert("Please make sure choose at least one criteria");
-    passwordCriteria();
+    
+    password_0 += lowercase;
+    password_1 = "a";
+    return [password_0, password_1];
   }
 }
 
