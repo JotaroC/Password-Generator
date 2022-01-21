@@ -10,9 +10,9 @@ Click [here](https://jotaroc.github.io/Password-Generator/) to the deployed webs
 
 ## Screenshot
 
-The following image is the sceenshot of web application's appearance and functionality:
+The following image is the sceenshot of web application's appearance:
 
-![screen shot of the website](./assets/img/screen1.jpg)
+![screen shot of the website](./Assets/screenshot.png)
 
 > **Note**: This layout is designed for desktop viewing, so you may notice that some of the elements don't look like the screenshot at a resolution smaller than 690px and 500px.
 ---
